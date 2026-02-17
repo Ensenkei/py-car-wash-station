@@ -43,8 +43,8 @@ class CarWashStation:
         if self.clean_power > car.clean_mark:
             car.clean_mark = self.clean_power
 
-    def rate_service(self, score: int) -> None:
+    def rate_service(self, new_score: int) -> None:
         old_rating = self.average_rating * self.count_of_ratings
         self.count_of_ratings += 1
-        new_rating = (old_rating + score) / self.count_of_ratings
+        new_rating = (old_rating + new_score) / self.count_of_ratings
         self.average_rating = round(new_rating, 1)
